@@ -1,5 +1,5 @@
 
-public class Line {
+public class Line implements Comparable<Line>{
 
     private final Point startPoint;
     private final Point endPoint;
@@ -32,4 +32,8 @@ public class Line {
         return this.calculateLength() == otherLine.calculateLength();
     }
 
+    @Override
+    public int compareTo(Line other) {
+        return Double.compare(this.calculateLength(), other.calculateLength());
+    }
 }
